@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de libros</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="mb-4">
+    <main>
+      <h1 id="titulo" class="titulo mt-4">Registro de Libros</h1>
+      <form id="formulario">
+        <div class="row-container">
+          <div class="container_input_label">
+            <label>Titulo: </label>
+            <input
+              placeholder="El principito"
+              type="text"
+              name="titulo"
+              pattern="[A-Za-z\s]+"
+              title="Ingrese solo letras"
+              id="titulo"
+              autocomplete="off"
+            />
+          </div>
+          <div class="container_input_label">
+            <label>Autor: </label>
+            <input
+              placeholder="Juan Leon Mera"
+              type="text"
+              name="autor"
+              pattern="[A-Za-z\s]+"
+              title="Ingrese solo letras"
+              id="autor"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="row-container">
+          <div class="container_input_label">
+            <label>Genero: </label>
+            <input
+              placeholder="Ficcion"
+              type="text"
+              name="genero"
+              pattern="[A-Za-z\s]+"
+              title="Ingrese solo letras"
+              id="genero"
+              autocomplete="off"
+            />
+          </div>
+          <div class="container_input_label">
+            <label>Editorial </label>
+            <input
+              placeholder="Bookends"
+              type="text"
+              name="editorial"
+              pattern="[A-Za-z\s]+"
+              title="Ingrese solo letras"
+              id="editorial"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div class="row-container">
+          <div class="container_input_label">
+            <label>ISBN</label>
+            <input
+              placeholder="0-9652-5854-5"
+              type="text"
+              name="isbn"
+              id="isbn"
+              autocomplete="off"
+            />
+          </div>
+          <div class="container_input_label">
+            <label>Año de Publicacion</label>
+            <input
+              placeholder="2009"
+              type="number"
+              min="0"
+              id="anioPublicacion"
+              pattern="^\d+(\.\d{1,2})?$"
+              title="Ingrese solo numeros"
+              id="anioPublicacion"
+              step="any"
+              autocomplete="off"
+            />
+          </div>
+          <div class="container_input_label">
+            <label>Numero Paginas </label>
+            <input
+              placeholder="208"
+              type="number"
+              name="numeroPaginas"
+              pattern="^\d+(\.\d{1,2})?$"
+              title="Ingrese solo numeros"
+              id="numeroPaginas"
+              autocomplete="off"
+            />
+          </div>
+        </div>
+
+        <div>
+          <button type="submit" class="boton" id="boton">
+            Registrar Libro
+          </button>
+          <button type="hidden" name="id" id="id"></button>
+        </div>
+      </form>
+
+      <div class="container-tabla">
+        <h1 class="mt-4 text-center mb-4">Libros Registrados</h1>
+        <table
+          id="tablaLibros"
+          class="table table-light mb-4 pb-4 table-striped align-middle text-center"
+        >
+          <thead>
+            <tr>
+              <th>Titulo</th>
+              <th>Autor</th>
+              <th>ISBN</th>
+              <th>Año de Publicacion</th>
+              <th>Genero</th>
+              <th>N. Paginas</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla"></tbody>
+        </table>
+      </div>
+
+      <template id="crudTemplate">
+        <tr>
+          <td class="titulo"></td>
+          <td class="autor"></td>
+          <td class="isbn"></td>
+          <td class="anioPublicacion"></td>
+          <td class="genero"></td>
+          <td class="numeroPaginas"></td>
+          <td>
+            <button class="btn-modificar" id="edit">Editar</button>
+            <button class="btn-eliminar" id="delete">Borrar</button>
+          </td>
+        </tr>
+      </template>
+    </main>
+  </body>
+  <script src="./js/index.js" type="module"></script>
+</html>
