@@ -5,7 +5,7 @@ const template = document.getElementById("crudTemplate").content;
 const fragmento = document.createDocumentFragment();
 const boton = document.getElementById("boton");
 
-const baseUrl = "http://localhost:3000/api/libros";
+const baseUrl = "http://localhost:7500/api/libros";
 const getAll = async () => {
   try {
     let res = await fetch(baseUrl);
